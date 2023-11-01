@@ -105,6 +105,7 @@ pwa:
   enabled: true # the option for PWA feature
 
 paginate: 7
+paginate_path: /blog/:num
 
 # The base URL of your site
 baseurl: ""
