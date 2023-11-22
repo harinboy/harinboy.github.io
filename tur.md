@@ -7,7 +7,11 @@ permalink: /tur
 
 #### Competitive Programming
 
-{% include judge_profile.html boj_id="harinboy" codeforces_id="harinboy" %}
+<ul>
+<li>BOJ: <a id="BOJ" href="https://www.acmicpc.net/user/harinboy" style="color:black;text-decoration:none;font-weight:bold;">harinboy</a></li>
+<li>solved.ac: <a id="solvedac" href="https://solved.ac/profile/harinboy" style="color:#FF0062;text-decoration:none;font-weight:bold;">harinboy</a></li>
+<li>codeforces: <a id="codeforces" href="https://codeforces.com/profile/harinboy" style="color:#FF8C00;text-decoration:none;font-weight:bold;">harinboy</a></li>
+</ul>
 
 * First solver of [BOJ 22222](https://www.acmicpc.net/problem/22222) (Korean)
   * An event problem released at 2022. 02. 22. 22:22:22.

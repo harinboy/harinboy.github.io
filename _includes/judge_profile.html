@@ -125,7 +125,7 @@
   function getBOJInfo() {
     $.ajax({
       type: 'GET',
-      url: 'https://proxy.jeoungh-nah.workers.dev/https://solved.ac/api/v3/search/problem?query=solved_by:'+handles['BOJ'],
+      url: 'https://solved.ac/api/v3/search/problem?query=solved_by:'+handles['BOJ'],
       dataType: 'json',
       timeout: 10000,
       cache: false,
@@ -148,7 +148,7 @@
     handles['solved'] = handles['BOJ'];
     $.ajax({
       type: 'GET',
-      url: 'https://proxy.jeoungh-nah.workers.dev/https://solved.ac/api/v3/user/show?handle='+handles['solved'],
+      url: 'https://solved.ac/api/v3/user/show?handle='+handles['solved'],
       dataType: 'json',
       timeout: 10000,
       cache: false,
