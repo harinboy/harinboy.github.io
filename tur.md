@@ -6,7 +6,9 @@ permalink: /tur
 # Totally Unofficial Records
 
 #### Competitive Programming
+
 {% include judge_profile.html boj_id="harinboy" codeforces_id="harinboy" %}
+
 * First solver of [BOJ 22222](https://www.acmicpc.net/problem/22222) (Korean)
   * An event problem released at 2022. 02. 22. 22:22:22.
   * Finding the expectation of Euclidean distance between two random points on the Sierpiński triangle
