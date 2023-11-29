@@ -22,10 +22,15 @@ This is **not** an introductory explanation.
 
 # Reviews and Previews
 
-Multi-Armed bandit problem consits of the actions $\mathcal{A} = \{ 1, 2, ..., K\}$, rewards, and time horizon $T$.
+Multi-Armed bandit problem consists of the actions $\mathcal{A} = \{ 1, 2, ..., K\}$, rewards, and time horizon $T$.
 For $t=1, 2, ... T$, the agent chooses an action $a_t\in\mathcal{A}$, and observes rewards $r_t$, whose expectation is $\mu_{a_t}^*$, where $\mu_a (a\in\mathcal{A})$ are hidden constants.
 The goal is to maximize the expected rewards obtained.  
 
+In the last post I constructed a high probability confidence bound of $\mu_a^*$ based on the rewards obatained by choosing action $a$.
+I denoted $N_{a, t}$ as the number of times the action $a$ was chosen until time $t$, and $\hat{\mu}_{a, t}$ as the empirical mean of the rewards obained by choosing the action $a$ until time $t$.
+Then the confidence bound that holds with probability $1-\delta$ was form of $\left[\hat{\mu}_{a, t}-\beta_{a, t}(1-\delta), \hat{\mu}_{a, t}+\beta_{a, t}(1-\delta)\right]$ where $\beta_{a, t}(1-\delta)$ is an appropriate value that depends on $N_{a, t}$.
+I showed that choosing the action with the highest $\hat{\mu}_{a, t} + \beta_{a, t}(1-\delta)$ leads to at most $2\beta_{a, t}(1-\delta)$ regret, assuming all the confidence intervals are valid.
+The last step was to take union bound over $TK$ intervals, so that all the intervals are valid with probability at least $1-\delta$.
 
 After obtaining confidence bounds of the form $\left[\hat{\mu}_{a, t}-\beta_{a, t}(1-\delta), \hat{\mu}_{a, t}+\beta_{a, t}(1-\delta)\right]$ that is violated with probability less than $\delta$, I had taken the union bound over $TK$ bounds.
 This may look correct since there are $K$ intervals per $T$ time steps.
@@ -54,13 +59,13 @@ As we will work with a sequence of random variables, I need the following defini
 > For $t\geq 1$, $X_t$ is conditionally $\sigma_t^2$-subGaussian if $\mathbb{E}\left[X_t\mid\mathcal{F}_{t-1}\right]=0$ and $\mathbb{E}\left[e^{sX_t}\mid\mathcal{F}_{t-1}\right]\leq e^{\frac{s^2\sigma_t^2}{2}}$.
 
 Being a sequence of a conditionally subGaussian random variables is a generalization of being a sequence of independent subGaussian random variables.
-Note that the distribution of $X_t$ may depend on $X_1, X_2, ..., X_{t-1}$, but its mean and tail probability should still satisfy the property of a subGaussian random variable conditioned on $X_1, X_2, ..., X_{t-1}$.
+Note that the distribution of $X_t$ may depend on $X_1, X_2, ..., X_{t-1}$, but it should still satisfy the property of a subGaussian random variable conditioned on $X_1, X_2, ..., X_{t-1}$.
 
 Instead of i.i.d. reward between 0 and 1, the reward will be given as the following:
 
-If an action $a$ is selected at time $t$, $\mu_{a}+X_t$ is given as a reward, where $\mu_a\in\mathbb{R}(a\in A)$ is an unknown fixed mean reward for each action and $X_t$ is a conditionally $\sigma^2$-subGaussian random variable.
+If an action $a$ is selected at time $t$, $\mu_{a}+X_t$ is given as a reward, where $\mu_a\in [0, B] (a\in A)$ is an unknown fixed mean reward for each action and $X_t$ is a conditionally $\sigma^2$-subGaussian random variable.
 
-Note that $X_t$ may depend on all the previous action selections including the $t$-th one and observed rewards.
+Note that $X_t$ may depend on all the previous action selections, including the $t$-th one, and observed rewards.
 Specifically, if $\mathcal{F}_t^-=\sigma(a_1, X_1, ..., a_{t-1}, X_{t-1}, a_t)$ is the sigma algebra defined by selected actions until time $t$ and rewards until time $t-1$, $\mathbb{E}\left[X_t\mid\mathcal{F}_t^-\right]=0$ and $\forall s\in \mathbb{R}, \mathbb{E}\left[e^{sX_t}\mid\mathcal{F}_t^-\right]\leq e^{\frac{s^2\sigma^2}{2}}$ must hold.
 
 The following lemma shows why this is a generalization of bounded reward setting, whose proof I omit.
@@ -78,7 +83,7 @@ $$
 *Proof* : Take the expectation of the both sides of the inequality $a\mathbf{1}\left(X\geq a\right)\leq X$, where $\mathbf{1}$ is the indicator function. $\square$
 
 The generailized Azuma's inequality shows a high probability bound for a sum of random variables using Markov's inequality.
-Note that a $\sigma^2$-subGaussian random variable may also be characterized by $\mathbb{E}\left[ e^{sX - \frac{s^2\sigma^2}{2}}\right]\leq 1$ and in this form we will be applying Markov's inequality.
+Note that a $\sigma^2$-subGaussian random variable may also be characterized by $\mathbb{E}\left[ e^{sX - \frac{s^2\sigma^2}{2}}\right]\leq 1$ and in this form I will be applying Markov's inequality.
 
 >**Theorem** (Generalized Azuma's inequality) Let $X_1, X_2, ..., X_n$ be a finite sequence of conditionally $\sigma^2$-subGaussian random variables. Then for any $0<\delta\leq1$,
 >$$
@@ -86,8 +91,8 @@ Note that a $\sigma^2$-subGaussian random variable may also be characterized by 
 >$$
 
 *Proof* : 
-The proof is basically showing that the sum $\sum_{t=1}^n X_t$ is a $\sigma^2t$-subGaussian random variable,
-and apply Markov's inequality.
+The proof is basically showing that the sum $\sum_{t=1}^n X_t$ is a $\sigma^2 n$-subGaussian random variable,
+and applying Markov's inequality.
 Let $\left\{\mathcal{F}_t\right\}_{t=0}^n$ be the filtration generated by $X_1, X_2, ..., X_n$.
 Fix any $s\in\mathbb{R}$.
 Let $D_t = \exp\left(sX_t-\frac{s^2\sigma^2}{2}\right)$ so that $0<\mathbb{E}\left[D_t\mid\mathcal{F}_{t-1}\right]\leq 1$.
@@ -114,7 +119,7 @@ $$
 \mathbb{E}\left[M_n\right]
 \leq 1
 $$
-which implies that $\sum_{t=1}^nX_t$ is $\sigma^2t$-subGaussian. 
+which implies that $\sum_{t=1}^nX_t$ is $\sigma^2 n$-subGaussian. 
 Use Markov's inequality on $M_n$ with $a=\frac{1}{\delta}$ gives
 $$
 \mathbb{P}\left[M_n\geq\frac{1}{\delta}\right]\leq\delta
@@ -141,8 +146,7 @@ Note that the number of random variables $n$ and $\sigma^2$ are fixed values.
 Many commit the error of using random $n$ or random $\sigma$.
 
 As the setting is generalized, I will have to rewrite the confidence intervals.
-Recall that $N_{a, t}$ is the number of times the action $a$ is taken up to time $t$, and $\hat{\mu}_{a, t}$ is the average of rewards given by choosing $a$.
-If the action $a$ was chosen at time indices $t_1, t_2, ..., t_{N_{a, t}}$ then
+If the action $a$ was chosen at time $t_1, t_2, ..., t_{N_{a, t}}$ then
 $$
 \hat{\mu}_{a, t}=\frac{1}{N_{a, t}}\sum_{k=1}^{N_{a, t}}\left(\mu_a+X_{t_k}\right)
 $$
@@ -184,8 +188,7 @@ $N$ is what is called a "stopping time".
 Basically you observe $\varepsilon_i$ one by one and "stop" at the moment when $\sum_{i=1}^t \varepsilon_i \leq -2\sqrt{t}$ happens.
 There are in total 256 possible outcomes of $\varepsilon_1, \varepsilon_2, ..., \varepsilon_8$, and doing some calculation, or with some help from a computer program, one can verify that there are 20 cases where $\left| \sum_{i=1}^N \varepsilon_i \right| \geq 2\sqrt{N}$ happens.
 That is $20/256 = 0.078125 > 0.0677$.
-So there you go.
-Azuma inequality cannot hold for random lenght $N$.
+This shows that Azuma inequality cannot hold for random length $N$.
 Also for random $\sigma$s since the counter example I gave can also be regarded as bounding the sum of $\varepsilon_i \mathbf{1}\left( i \leq N \right)$.
 You cannot claim that each term is either 1-subGaussian or 0-subGaussian, with $N$ 1-subGaussians.
 
