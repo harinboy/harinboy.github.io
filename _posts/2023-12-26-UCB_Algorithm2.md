@@ -8,7 +8,7 @@ math: true
 
 # Introduction
 
-In the previous [post](/_ posts/2023-10-31-UCB-Algorithm.md), I introduced the UCB algorithm and proved its $O \left( \sqrt{KT\log\frac{KT}{\delta}} + K \right)$ regret bound.
+In the previous [post](/posts/UCB-Algorithm), I introduced the UCB algorithm and proved its $O \left( \sqrt{KT\log\frac{KT}{\delta}} + K \right)$ regret bound.
 To achieve it, I utilized confidence intervals that the true mean rewards of the actions lies with high probability.
 The final part of the proof involved taking the union bound over $KT$ high-probability confidence intervals, resulting the ${KT}$ term inside the logarithm.
 
