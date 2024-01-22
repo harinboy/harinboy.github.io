@@ -13,8 +13,8 @@ I explained in detail why the union bound over $KT$ events must be taken in the 
 
 I will improve the result from the previous post in two ways.  
 First, I will address the case where $T$ is unknown or infinite.
-In our previous approach, we required the value of $T$ to determine the number of events when applying the union bound.
-However, when $T$ is unknown or possibly infinite, we need a different way of taking the union bound over an infinite set of events.  
+In our previous approach, we required the value of $T$ to determine the number of events to apply the union bound over.
+However, when $T$ is unknown or possibly infinite, we need a different way of taking the union bound.  
 Second, I will show that a tighter inequality can be achieved when bounding the sum of $n$ subGaussian random variables for all possible values of $n$.
 In our previous analysis, we applied the union bound over the $KT$ events, resulting in a $\log\frac{KT}{\delta}$ term.
 I will show that it is possible to sharpen this term to $\log \frac{K\log{T}}{\delta}$.
@@ -219,21 +219,21 @@ $$
 \begin{aligned}
 \frac{\pi^2(j+1)^2}{6\delta}
 \leq& \left(\frac{\pi^2}{6(\log 2)^2} \right) \frac{(\log{2n})^2}{\delta}\\
-\leq& \frac{7(\log 2n)^2}{2\delta}
+\leq& \frac{7(\log 2n)^2}{2\delta} .
 \end{aligned}
 $$
 
 Then finally we obtain
 
 $$
-\mathbb{P}\left[\exists n\in I_ j : \sum_ {t=1}^n X_ t \geq 2^{\frac{3}{4}}\sigma\sqrt{ n \log \frac{7(\log 2n)^2}{2\delta} } \right]\leq \frac{6 \delta}{\pi^2 (j+1)^2}
+\mathbb{P}\left[\exists n\in I_ j : \sum_ {t=1}^n X_ t \geq 2^{\frac{3}{4}}\sigma\sqrt{ n \log \frac{7(\log 2n)^2}{2\delta} } \right]\leq \frac{6 \delta}{\pi^2 (j+1)^2} .
 $$
 
 Taking union boud over $j\geq0$ and the inequality where $X_ t$ is replaced with $-X_ t$ complete the proof.
 
 $$
 \mathbb{P}\left[\exists n\in \mathbb{N} : \left| \sum_ {t=1}^n X_ t \right| \geq 2^{\frac{3}{4}}\sigma\sqrt{n \log \frac{7 (\log 2n)^2}{\delta}}\right]
-\leq\delta
+\leq\delta .
 $$
 
 $\square$
@@ -256,6 +256,7 @@ $$
 \leq& 2^{\frac{7}{4}}\sigma\sqrt{\log\frac{7K(\log 2T)^2}{\delta}}\sum_ {a=1}^K 2\sqrt{N_ {a, T}}\\
 \leq& 2^{\frac{11}{4}}\sigma\sqrt{\log\frac{7K(\log 2T)^2}{\delta}}\times\sqrt{KT}\\
 \leq& 6.8\sigma\sqrt{KT\left(\log\left(\frac{7K(\log2T)^2}{\delta}\right)\right)}
+.
 \end{aligned}
 $$
 
@@ -291,7 +292,7 @@ This post and the previous post together can serve as answers for the problems i
 
 # Reference
 
-[1] Rick Durrett, "Probability: Theory and Examples", 2019. 
+[1] Rick Durrett, "Probability: Theory and Examples", 2019.  
 [2] Aurelien Garivier. "Informational confidence bounds for self-normalized averages and  applications." arXiv:1309.3376, 2013.  
 [3] Steven R Howard, Aaditya Ramdas, Jon McAuliffe, and Jasjeet Sekhon. "Time-uniform, nonparametric,
 nonasymptotic confidence sequences." The Annals of Statistics, 2021.   
