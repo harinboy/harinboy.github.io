@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /surff
+permalink: /surf
 ---
 
-# Somewhat Unofficial Records and Fun Facts
+# Somewhat Unofficial Records and Facts
 
 #### Competitive Programming
 
