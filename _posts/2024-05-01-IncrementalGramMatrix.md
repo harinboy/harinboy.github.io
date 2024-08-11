@@ -128,3 +128,6 @@ A^{-1} - B^{-1}
 \end{aligned}
 $$
 
+---
+(Added Aug 12, 2024) Some time after uploading this post, I realized that Fact 2 is actually a special case of the [Sherman-Morrison Formula](https://en.wikipedia.org/wiki/Sherman%E2%80%93Morrison_formula).
+I am adding this information for interested readers who would like to see a more general result, and also as a reference for myself in case I forget the name of the formula — which happens often.
