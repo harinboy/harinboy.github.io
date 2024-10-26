@@ -16,7 +16,7 @@ While CV contains my academic or other offical records, you can check out my [So
 I am delighted to announce that my paper, *Improved Regret of Linear Ensemble Sampling*, a joint work with Professor Min-hwan Oh, has been accepted at NeurIPS 2024! Details will be updated soon. [[Conference link]](https://nips.cc/virtual/2024/poster/96524)
 
 ### Experiences
-I am fortunate to work as an undergraduate researcher under the supervision of Professor [Min-hwan Oh](minoh.io) at Seoul National University.
+I am fortunate to work as an undergraduate researcher under the supervision of Professor [Min-hwan Oh](https://minoh.io) at Seoul National University.
 So far, I have written three papers: one is soon to be published, and the other two are currently under review for a conference.
 
 In addition, I have actively participated in competitive programming.
