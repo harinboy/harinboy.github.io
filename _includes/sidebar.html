@@ -19,12 +19,20 @@
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
       <!-- home -->
-      <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+      <li class="nav-item{% if page.url == '/' %}{{ " active" }}{% endif %}">
         <a href="{{ '/' | relative_url }}" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+          <span>{{ site.data.locales[include.lang].tabs.home }}</span>
         </a>
       </li>
+      <!-- blog -->
+      <li class="nav-item{% if page.url == '/blog' %}{{ " active" }}{% endif %}">
+        <a href="{{ '/blog' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-pencil"></i>
+          <span>{{ 'Blog' }}</span>
+        </a>
+      </li>    
+
       <!-- the real tabs -->
       {% for tab in site.tabs %}
         <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
@@ -32,7 +40,7 @@
             <i class="fa-fw {{ tab.icon }}"></i>
             {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
 
-            <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+            <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title }}</span>
           </a>
         </li>
         <!-- .nav-item -->
