@@ -27,7 +27,7 @@ I competed in the 47th ICPC World Finals in Luxor, Egypt, in April 2024 and won 
 
 ### Publications
 
-[1] Harin Lee and Min-hwan. Oh, “Minimax optimal reinforcement learning with quasi-optimism”, International Conference on Learning Representations, 2025, (To appear).  
+[1] Harin Lee and Min-hwan. Oh, “Minimax optimal reinforcement learning with quasi-optimism”, International Conference on Learning Representations, 2025, (To appear). [[arxiv](https://arxiv.org/abs/2503.00810)]  
 [2] Harin Lee, Taehyun. Hwang, and Min-hwan Oh, “Lasso bandit with compatibility condition on optimal arm”, International Conference on Learning Representations, 2025, (To appear). [[arxiv](https://arxiv.org/abs/2406.00823)]  
 [3] Harin Lee and Min-hwan. Oh, “Improved regret of linear ensemble sampling”, Advances in Neural Information Processing Systems, vol. 37, 2025. [[arxiv](https://arxiv.org/abs/2411.03932)] [[conf](https://nips.cc/virtual/2024/poster/96524)]
 
