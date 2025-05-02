@@ -136,12 +136,12 @@ By Lemma 3,
 
 $$
 \begin{aligned}
-\mathbb{E} \left[ D_n \mid \mathcal{F}_ {n-1} \right]
-& = \mathbb{E} \left[ e^{\lambda X_ n - (e^\lambda - 1 - \lambda) V_n} \mid \mathcal{F}_ {n-1} \right]
+\mathbb{E} \left[ D_ n \mid \mathcal{F}_ {n-1} \right]
+& = \mathbb{E} \left[ e^{\lambda X_ n - (e^\lambda - 1 - \lambda) V_ n} \mid \mathcal{F}_ {n-1} \right]
 \\
-& = \mathbb{E} \left[ e^{ \lambda X_ n} \mid \mathcal{F}_ {n-1} \right] e^{ - (e^\lambda - 1 - \lambda) V_n }
+& = \mathbb{E} \left[ e^{ \lambda X_ n} \mid \mathcal{F}_ {n-1} \right] e^{ - (e^\lambda - 1 - \lambda) V_ n }
 \\
-& \le e^{(e^{\lambda} - 1 - \lambda) \mathbb{E}[ X_ n^2 \mid \mathcal{F}_ {n-1}]} e^{ - (e^\lambda - 1 - \lambda) V_n }
+& \le e^{(e^{\lambda} - 1 - \lambda) \mathbb{E}[ X_ n^2 \mid \mathcal{F}_ {n-1}]} e^{ - (e^\lambda - 1 - \lambda) V_ n }
 \\
 & = 1
 \, .
@@ -285,7 +285,9 @@ It is possible to apply the same idea in the previous [post](/posts/TimeUniformA
 \mathbb{P} \left( \exists n \in \mathbb{N} : \sum_ {i=1}^n X_ i \ge \frac{1}{3} \log \frac{7(\log 2n)^2}{2\delta} + 2^{\frac{3}{4}} \sigma \sqrt{n \log \frac{7 (\log 2n)^2}{2\delta}} \right) \le \delta \, .
 > $$
 
-*Proof* Following the steps to obtain inequality (1) in the proof of Corollary 3, we obtain that for fixed $0 < \lambda < 3$, it holds that
+(Updated May 2, 2025 : $\sigma \sqrt{n}$ can be further refined to $\sum_ {t=1}^n V_ t$. The result is presented as Theorem 3 below.) 
+
+*Proof* Following the steps for obtaining inequality (1) in the proof of Corollary 3, we obtain that for fixed $0 < \lambda < 3$, it holds that
 
 $$
 \mathbb{P} \left( \exists n \in \mathbb{N} : \sum_ {i=1}^n X_ i \ge \frac{ \lambda \sigma^2 n }{2 ( 1 - \frac{\lambda}{3})} + \frac{1}{\lambda} \log \frac{1}{\delta} \right) \le \delta 
@@ -300,7 +302,7 @@ $$
     I_ 1 =& \lbrace 2, 3 \rbrace \\
     I_ 2 =& \lbrace 4, 5, 6, 7 \rbrace \\
     \vdots \\
-    I_ j =& \lbrace 2^j, \ldots 2^{j+1} - 1 \rbrace 
+    I_ j =& \lbrace 2^j, \ldots 2^{j+1} - 1 \rbrace \\
     \vdots
 \end{aligned}
 $$
@@ -345,11 +347,117 @@ $$
 
 $\square$
 
+(Updated May 2, 2025) I discovered that the dependence on $\sigma \sqrt{N}$ can be refined to $\sum_ {t=1}^n V_ t$.
+
+
+> **Theorem 3** (Time-Uniform Bernstein's Inequality 2) Let $\lbrace X_ n \rbrace_ {n=1}^\infty$ be a m. d. s. with respect to a filtration $\lbrace \mathcal{F}_ n \rbrace_ {n=0}^\infty$.
+> Suppose $X_ n \le 1$ holds almost surely for all $n$.
+> Let $T_ n = \sum_ {t = 1}^n \mathbb{E} [ X_ t^2 | \mathcal{F}_ {t-1} ]$.
+> Then, for any $\delta \in (0, 1]$, it holds that
+> 
+> $$
+\mathbb{P} \left( \exists n \in \mathbb{N} : \sum_ {i=1}^n X_ i \ge 2 \log \frac{2 (1 + \log^+ T_ n)^2}{\delta} + 2 \sqrt{ T_ n \log \frac{2 (1 + \log^+ T_ n)^2}{\delta}} \right) \le \delta \, ,
+> $$
+> 
+> where $\log^+x = \max\lbrace \log x, 0 \rbrace$.
+
+Compared to Theorem 2, now the logarithmic factor is $\log \log T_ n$, which is less than $\log \log \sigma n$ under the setting of Theorem 2.
+If $T_ n$ is small or even sublinear in $n$, the bound of Theorem 3 is much tighter.
+
+*Proof*  Following the steps for obtaining inequality (1) without bounding $T_ n \le \sigma^2 n$, we obtain that for fixed $0 < \lambda < 3$, it holds that
+
+$$
+\mathbb{P} \left( \exists n \in \mathbb{N} : \sum_ {i=1}^n X_ i \ge \frac{ \lambda T_ n }{2 ( 1 - \frac{\lambda}{3})} + \frac{1}{\lambda} \log \frac{1}{\delta} \right) \le \delta \, .\qquad (2)
+$$
+
+Take the union bound over the following values of $\lambda = \lambda_ k$ for $k = 0, 1, \ldots$ with probabilities $\delta_ k = \frac{2 (1 + k)^2}{\delta}$ :
+
+$$
+\lambda_ k = \frac{3 \sqrt{\log \frac{1}{\delta_ k}}}{\sqrt{\log \frac{1}{\delta_ k}} + 3 e^\frac{k}{2} }
+\, .
+$$
+
+Plugging in this value to $\lambda$, we have 
+
+$$
+\begin{aligned}
+\frac{ \lambda_ k T_ n }{2 ( 1 - \frac{\lambda_ k}{3})} + \frac{1}{\lambda_ k} \log \frac{1}{\delta_ k}
+& = \frac{ T_ n \sqrt{\log \frac{1}{\delta_ k}}}{2 e^\frac{k}{2}} + e^\frac{k}{2} \sqrt{\log \frac{1}{\delta_ k}} + \frac{1}{3} \log \frac{1}{\delta_ k}
+\, .
+\end{aligned}
+$$
+
+By inequality (2) and the union bound, the probability of $\sum_ {t=1}^n X_ t$ exceeding this value for any $k$, or  equivalently exceeding the minimum of these values over $k$, is less than $\delta$.
+
+$$
+\mathbb{P} \left( \exists n \in \mathbb{N} : \sum_ {i=1}^n X_ i \ge \min_ {k=0, 1, \ldots} \left( \frac{T_ n}{2 e^\frac{k}{2}} + e^\frac{k}{2} \right)\sqrt{\log \frac{1}{\delta_ k}} + \frac{1}{3} \log \frac{1}{\delta_ k} \right) \le \delta 
+$$
+
+The proof is completed by showing that the minimum is smaller than the desired value by choosing appropriate $k = k_ n$ for all $n$.
+We separately deal with the cases $T_ n \ge 1$ and $0 \le T_ n < 1$.
+
+**Case 1** $T_ n \ge 1$ :  
+Choose $k_ n = \lfloor \log T_ n \rfloor$.
+Then, it holds that
+
+$$
+\sqrt{T_ n / e} \le e^{\frac{k_ n}{2}} \le \sqrt{T_ n } 
+\, .
+$$
+
+It follows that
+
+$$
+\begin{aligned}
+    \frac{T_ n}{2 e^\frac{k_ n}{2}} + e^\frac{k_ n}{2}
+    & \le \frac{\sqrt{ e T_ n }}{2} + \sqrt{T_ n}
+    \\
+    & \le 2 \sqrt{T_ n}
+    \, .
+\end{aligned}
+$$
+
+Therefore, it holds that
+
+$$
+\begin{aligned}
+\min_ {k=0, 1, \ldots} \left( \frac{T_ n}{2 e^\frac{k}{2}} + e^\frac{k}{2} \right)\sqrt{\log \frac{1}{\delta_ k}} + \frac{1}{3} \log \frac{1}{\delta_ k}
+& \le \left( \frac{T_ n}{2 e^\frac{k_ n}{2}} + e^\frac{k_ n}{2} \right)\sqrt{\log \frac{1}{\delta_ {k_ n}}} + \frac{1}{3} \log \frac{1}{\delta_ {k_ n}}
+\\
+& \le 2 \sqrt{T_ n\log \frac{1}{\delta_ {k_ n}}} + \frac{1}{3} \log \frac{1}{\delta_ {k_ n}}
+\\
+& \le 2 \sqrt{T_ n\log \frac{2(1 + \log^+ T_ n)^2}{\delta}} + 2 \log \frac{2(1 + \log^+ T_ n)^2}{\delta}
+\, ,
+\end{aligned}
+$$
+
+where the last inequality uses that $\frac{1}{\delta_ {k_ n}} = \frac{2 (1 + k_ n)^2}{\delta} \le \frac{2( 1 + \log^+ T_ n)^2}{\delta}$ and $\frac{1}{3} \le 2$.
+
+**Case 2** $0 \le T_ n < 1$ :  
+Choose $k_ n = 0$.
+Since $T_ n \le 1$, $T_ n \le \sqrt{T_ n}$ holds.
+Using that $\log \frac{1}{\delta_ 0} \ge \log 2$, it holds that $\sqrt{ \log \frac{1}{\delta_ 0}} \le \frac{1}{\sqrt{\log 2}} \log \frac{1}{\delta_ 0}$.
+Therefore, it holds that
+
+$$
+\begin{aligned}
+\left( \frac{T_ n}{2 e^0} + e^0 \right)\sqrt{\log \frac{1}{\delta_ 0}} + \frac{1}{3} \log \frac{1}{\delta_ 0}
+& \le \sqrt{ \frac{T_ n}{2} \log \frac{1}{\delta_ 0}} +  \frac{1}{\sqrt{\log 2}}\log \frac{1}{\delta_ 0} + \frac{1}{3} \log \frac{1}{\delta_ 0}
+\\
+& \le 2 \sqrt{T_ n \log \frac{1}{\delta_ 0} } + 2 \log \frac{1}{\delta_ 0}
+\, .
+\end{aligned}
+$$
+
+Note that in this case, $\frac{1}{\delta_ 0} = \frac{2}{\delta} = \frac{2 (1 + \log^+ T_ n)^2}{\delta}$.
+
+The proof is complete. $\square$
+
 # Conclusion
 
 In this post, I proved a high-probability concentration inequality for upper-bounded m. d. s., which is a result follows from Freedman (1975) [10].
 I also showed how Theorem 1 implies several instantiations of Freedman's inequality in bandit literature, demonstrating its strength.
-Some literature use Freedman's inequality in a suboptimal way, and replacing it appropariately with Theorem 1 or one its corollaries leads to a reduction of a constant or a $\log T$ factor.
+Some literature use Freedman's inequality in a suboptimal way, and replacing it appropariately with Theorem 1 or one of its corollaries leads to a reduction of a constant or a $\log T$ factor.
 At the end, I proved time-uniform Bernstein's inequality, and I would like to note that it is my independent work.
 
 # References
