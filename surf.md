@@ -8,12 +8,12 @@ permalink: /surf
 #### Competitive Programming
 
 <ul>
-<li>BOJ: <a id="BOJ" href="https://www.acmicpc.net/user/harinboy" style="color:black;text-decoration:none;font-weight:bold;">harinboy</a></li>
-<li>solved.ac: <a id="solvedac" href="https://solved.ac/profile/harinboy" style="color:#FF0062;text-decoration:none;font-weight:bold;">harinboy</a></li>
-<li>codeforces: <a id="codeforces" href="https://codeforces.com/profile/harinboy" style="color:#FF8C00;text-decoration:none;font-weight:bold;">harinboy</a></li>
+  <li><del>BOJ: <a id="BOJ" style="color:black;text-decoration:none;font-weight:bold;">harinboy</a></del> (End of Service) </li>
+  <li>solved.ac: <a id="solvedac" href="https://solved.ac/profile/harinboy" style="color:#FF0062;text-decoration:none;font-weight:bold;">harinboy</a></li>
+  <li>codeforces: <a id="codeforces" href="https://codeforces.com/profile/harinboy" style="color:#FF8C00;text-decoration:none;font-weight:bold;">harinboy</a></li>
 </ul>
 
-* First solver of [BOJ 22222](https://www.acmicpc.net/problem/22222) (Korean)
+* First solver of BOJ 22222
   * An event problem released at 2022. 02. 22. 22:22:22.
   * Finding the expectation of Euclidean distance between two random points on the Sierpiński triangle, up to 222 digits after the decimal point.
   
@@ -22,7 +22,7 @@ permalink: /surf
 * Minigames + Adventure game - Fun minigames together with amazing storylines, 6 hours of playtime.
 
 #### Janggi (Korean Chess)
-* 8th-dan in the online app "Janggi for Kakao" (Highest : 9th dan - there is no 10th by the way)
+* 7th-dan in the online app "Janggi for Kakao" (Highest : 9th dan - there is no 10th by the way)
   * Can be acknowledged as an official amateur 3rd-dan.
 * I beat Kim Seung-Rae, a professional 9th-dan janggi player and Head of Korean Janggi Association.
   * Youtube video on his channel (1:48:32~2:14:33) [link](https://www.youtube.com/live/2KE9uFP9YnE?si=LeiJue12L76NphKN&t=6510).

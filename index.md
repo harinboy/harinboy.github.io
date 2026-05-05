@@ -14,6 +14,12 @@ While CV contains my academic or other offical records, you can check out my [So
 
 ### News
 
+My paper "Minimax Optimal Strategy for Delayed Observations in Online Reinforcement Learning" is accepted to ICML 2026 as a spotlight!
+
+My paper "Unified Framework of Distributional Regret in Multi-Armed Bandits and Reinforcement Learning" is accepted to COLT 2026!
+
+Details to be added.
+
 
 ### Experiences
 I was fortunate to work as an undergraduate researcher under the supervision of Professor [Min-hwan Oh](https://minoh.io) at Seoul National University.
