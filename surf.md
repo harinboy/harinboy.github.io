@@ -8,9 +8,11 @@ permalink: /surf
 #### Competitive Programming
 
 <ul>
-  <li><del>BOJ: <a id="BOJ" style="color:black;text-decoration:none;font-weight:bold;">harinboy</a></del> (End of Service) </li>
-  <li>solved.ac: <a id="solvedac" href="https://solved.ac/profile/harinboy" style="color:#FF0062;text-decoration:none;font-weight:bold;">harinboy</a></li>
-  <li>codeforces: <a id="codeforces" href="https://codeforces.com/profile/harinboy" style="color:#FF8C00;text-decoration:none;font-weight:bold;">harinboy</a></li>
+  <li><del>BOJ: <span style="color: #888; font-weight: bold;">harinboy</span></del> (End of Service)</li>
+  
+  <li>solved.ac: <a id="solvedac" href="https://solved.ac/profile/harinboy" style="color: #FF0062; text-decoration: none; font-weight: bold;">harinboy</a></li>
+  
+  <li>codeforces: <a id="codeforces" href="https://codeforces.com/profile/harinboy" style="color: #FF8C00; text-decoration: none; font-weight: bold;">harinboy</a></li>
 </ul>
 
 * First solver of BOJ 22222
