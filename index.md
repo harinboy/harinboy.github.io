@@ -16,9 +16,9 @@ While CV contains my academic or other offical records, you can check out my [So
 
 "Minimax Optimal Strategy for Delayed Observations in Online Reinforcement Learning" (joint work with Professor Kevin Jamieson) has been accepted to **ICML 2026** as a Spotlight!
 
-"Unified Framework of Distributional Regret in Multi-Armed Bandits and Reinforcement Learning" (joing work with Professor Min-hwan Oh) has been accepted to **COLT 2026**!
+"Unified Framework of Distributional Regret in Multi-Armed Bandits and Reinforcement Learning" (joint work with Professor Min-hwan Oh) has been accepted to **COLT 2026**!
 
-Details to be added.
+Details to be added for both papers.
 
 
 ### Experiences
