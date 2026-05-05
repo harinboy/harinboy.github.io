@@ -349,6 +349,7 @@ $\square$
 
 (Updated May 2, 2025) I discovered that the dependence on $\sigma \sqrt{N}$ can be refined to $\sum_ {t=1}^n V_ t$.
 
+(Update May 4, 2026) A slightly cleaner version of the following inequality is provided in Lemma 37 of [12, [arxiv](https://arxiv.org/abs/2503.00810)], where the bound is $2\sqrt{\max\lbrace T_n, c \rbrace\log \frac{2(1 + \log^+(T_n/c))^2}{\delta}} + \frac{1}{3} \log \frac{2(1 + \log^+(T_n / c))^2}{\delta}$ for any parameter $c > 0$.
 
 > **Theorem 3** (Time-Uniform Bernstein's Inequality 2) Let $\lbrace X_ n \rbrace_ {n=1}^\infty$ be a m. d. s. with respect to a filtration $\lbrace \mathcal{F}_ n \rbrace_ {n=0}^\infty$.
 > Suppose $X_ n \le 1$ holds almost surely for all $n$.
@@ -473,3 +474,4 @@ At the end, I proved time-uniform Bernstein's inequality, and I would like to no
 [9] Andrea Tirinzoni, Matteo Papini, Ahmed Touati, Alessandro Lazaric, and Matteo Pirotta. "Scalable representation learning in linear contextual bandits with constant regret guarantees." Advances in Neural Information Processing Systems 35 (2022): 2307-2319.  
 [10] David A. Freedman. "On tail probabilities for martingales." the Annals of Probability, 1975.  
 [11] Rick Durrett, "Probability: Theory and Examples", 2019.  
+[12] Harin Lee and Min-hwan Oh. "Minimax Optimal Reinforcement Learning with Quasi-Optimism." The Thirteenth International Conference on Learning Representations, 2025.
